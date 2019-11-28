@@ -1,0 +1,16 @@
+---
+applications:
+- name: global-admin-server
+  memory: 682M
+  disk_quota: 256M
+  routes:
+  - route: global-admin-server-bdx01.apps.eu01.cf.canopy-cloud.com
+  path: target/admin.jar
+  buildpacks: 
+  - java_buildpack
+  stack: cflinuxfs3
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 1.8.+ } }'
+    
+  services:
+    - eureka-service
