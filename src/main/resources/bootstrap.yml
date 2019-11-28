@@ -1,0 +1,17 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: msi-admin
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: msi-config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${vcap.services.eureka-service.credentials.url}
+    
